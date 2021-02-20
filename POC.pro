@@ -20,6 +20,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         audio/asyncaudioinputhandler.cpp \
         audio/asyncaudiooutputprocessor.cpp \
+        fileSystem/filesystem.cpp \
         main.cpp \
         serilization/filereceiverserilization.cpp \
         serilization/imagereceiverserilization.cpp \
@@ -29,6 +30,8 @@ SOURCES += \
 HEADERS += \
     audio/asyncaudioinputhandler.h \
     audio/asyncaudiooutputprocessor.h \
+    fileSystem/IFileIO.h \
+    fileSystem/filesystem.h \
     serilization/filereceiverserilization.h \
     serilization/imagereceiverserilization.h \
     thread/athread.h \

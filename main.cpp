@@ -8,49 +8,48 @@
 
 #include "serilization/imagereceiverserilization.h"
 #include "serilization/filereceiverserilization.h"
+#include "fileSystem/filesystem.h"
 
-#include <QFile>
 #include <QBuffer>
 #include <QTimer>
-#include <QSaveFile>
 #include <QStandardPaths>
 int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
 
-    //    //  File test
-    //    AsyncUdpReceiver *receiver = new AsyncUdpReceiver(1234, QHostAddress("127.0.0.1"));
-    //    AsyncUdpTransmitter *transmitter = new AsyncUdpTransmitter(1234, QHostAddress("127.0.0.1"));
+//    //  File test
+//    AsyncUdpReceiver *receiver = new AsyncUdpReceiver(1234, QHostAddress("127.0.0.1"));
+//    AsyncUdpTransmitter *transmitter = new AsyncUdpTransmitter(1234, QHostAddress("127.0.0.1"));
+//    IFileIO *fileSystem = new FileSystem();
 
-    //    FileReceiverSerilization *serilization = new FileReceiverSerilization(receiver);
-    //    QObject::connect(receiver, &AsyncUdpReceiver::onNewMessage, serilization, &FileReceiverSerilization::newFileData);
+//    FileReceiverSerilization *serilization = new FileReceiverSerilization(receiver);
+//    QObject::connect(receiver, &AsyncUdpReceiver::onNewMessage, serilization, &FileReceiverSerilization::newFileData);
 
-    //    QObject::connect(serilization, &FileReceiverSerilization::onNewFile, serilization, [](QString fileName, QByteArray fileData){
-    //        QSaveFile file((QStandardPaths::writableLocation(QStandardPaths::DesktopLocation)) + "/" + fileName);
-    //        file.open(QIODevice::WriteOnly);
-    //        file.write(fileData);
-    //        // Calling commit() is mandatory, otherwise nothing will be written.
-    //        file.commit();
-    //    });
+//    QObject::connect(serilization, &FileReceiverSerilization::onNewFile, serilization, [fileSystem](QString fileName, QByteArray fileData){
+//        QString path = (QStandardPaths::writableLocation(QStandardPaths::DesktopLocation)) + "/" + fileName;
+//        qDebug() << "IFileIO write result:" << fileSystem->write(path, fileData);
+
+//    });
 
 
-    //    receiver->start();
-    //    transmitter->start();
-    //    QTimer::singleShot(1000, transmitter, [transmitter](){
-    //        QFile file("/home/oscar/Desktop/Proje/a.txt");
-    //        if(!file.exists()) qDebug() << "not found file";
-    //        file.open(QIODevice::ReadWrite);
-    //        QByteArray data;
-    //        data.append(file.readAll());
-    //        file.close();
-    //        QStringList parts = file.fileName().split("/");
-    //        QString filename = parts.at(parts.size() - 1);
-    //        qDebug() << "Start send a file:" << filename;
-    //        transmitter->send(filename.toUtf8());
-    //        transmitter->send(data);
-    //        transmitter->send(FileReceiverSerilization::END_OF_FILE);
-    //        qDebug() << "Finished send a file";
-    //    });
+//    receiver->start();
+//    transmitter->start();
+//    QTimer::singleShot(1000, transmitter, [transmitter, fileSystem](){
+//        QString path = "/home/oscar/Desktop/Proje/a.txt";
+//        QStringList parts = path.split("/");
+//        QString filename = parts.at(parts.size() - 1);
+//        QByteArray data = fileSystem->read(path);
+//        if(!data.isEmpty()){
+//            qDebug() << "Start send a file:" << filename;
+//            transmitter->send(filename.toUtf8());
+//            transmitter->send(data);
+//            transmitter->send(FileReceiverSerilization::END_OF_FILE);
+//            qDebug() << "Finished send a file";
+//        }else {
+//            qDebug() << "IFileIO cannot readed";
+//        }
+
+//    });
 
 
 
